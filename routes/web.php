@@ -1,11 +1,12 @@
 <?php
 
+use App\Http\Controllers\GameController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Game;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [GameController::class, 'index'])->name('game.home');
+Route::get('/list', [GameController::class, 'list'])->name('game.list');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
