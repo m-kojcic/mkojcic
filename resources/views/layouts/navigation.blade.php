@@ -6,8 +6,8 @@
         <li class="{{ request()->is('list') ? 'active' : '' }}">
             <a href="{{ route('game.list') }}">Igrice na ponudu</a>
         </li>
-        <li class="{{ request()->is('elements') ? 'active' : '' }}">
-            <a href="{{ url('/elements') }}">Elements Reference</a>
+        <li class="{{ request()->is('contact') ? 'active' : '' }}">
+            <a href="{{ route('game.contact') }}">Kontakt</a>
         </li>
     </ul>
     <ul class="icons">

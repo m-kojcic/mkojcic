@@ -24,4 +24,8 @@ class GameController extends Controller
             "games" => $games,
         ]);
     }
+
+    public function contact() {
+        return view("games.contact");
+    }
 }

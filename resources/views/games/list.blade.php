@@ -20,8 +20,9 @@ Prikaz svih igara
                                 <th>Naziv</th>
                                 <th>Opis</th>
                                 <th>Cena</th>
-                                <th>Žanr</th>
+                                <th>Zanr</th>
                                 <th>Slika</th>
+                                <th>Detalji</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -34,6 +35,9 @@ Prikaz svih igara
                                     <td>{{ $game->genre->name ?? 'N/A' }}</td>
                                     <td>
                                         <img src="{{ asset('assets/images/' . $game->image) }}" alt="{{ $game->name }}" width="80" height="80" style="object-fit:cover; display:block; margin:auto;">
+                                    </td>
+                                    <td>
+                                        <button>Opsirnije</button>
                                     </td>
                                 </tr>
                             @endforeach
