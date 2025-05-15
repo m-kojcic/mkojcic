@@ -10,7 +10,7 @@ Route::get('/list', [GameController::class, 'list'])->name('game.list');
 Route::get('/contact', [GameController::class, 'contact'])->name('game.contact');
 Route::get('/game/{id}', [GameController::class, 'description'])->name('game.description');
 
-Route::get('/dashboard', function () {
+Route::get('/profile/dashboard', function () {
     return view('profile.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
