@@ -28,4 +28,12 @@ class GameController extends Controller
     public function contact() {
         return view("games.contact");
     }
+
+    public function description($id) {
+        $game = Game::findOrFail($id);
+
+        return view("games.description", [
+            "game" => $game,
+        ]);
+    }
 }

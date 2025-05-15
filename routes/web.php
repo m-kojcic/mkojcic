@@ -8,9 +8,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [GameController::class, 'index'])->name('game.home');
 Route::get('/list', [GameController::class, 'list'])->name('game.list');
 Route::get('/contact', [GameController::class, 'contact'])->name('game.contact');
+Route::get('/game/{id}', [GameController::class, 'description'])->name('game.description');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('profile.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

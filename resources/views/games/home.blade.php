@@ -9,13 +9,13 @@ GameForge
 		<!-- Featured Post -->
         <article class="post featured">
             <header class="major">
-                <span class="date">For {{ $featured->price }}$ !</span>
+                <span class="date">Za {{ $featured->price }} dinara!</span>
                 <h2><a href="#">{{ $featured->title }}</a></h2>
                 <p>{{ $featured->description }}</p>
             </header>
             <a href="#" class="image main"><img src="{{ asset('assets/images/' . $featured->image) }}" alt="{{ $featured->title }}" /></a>
             <ul class="actions special">
-                <li><a href="#" class="button large">Buy here!</a></li>
+                <li><a href="{{ route('game.description', ['id' => $featured->id]) }}" class="button large">Opsirnije</a></li>
             </ul>
         </article>
         <!-- Posts -->
@@ -23,7 +23,7 @@ GameForge
             @foreach($games->where('id', '!=', $featured->id) as $game)
                 <article>
                     <header>
-                        <span class="date">For {{ $game->price }}$ !</span>
+                        <span class="date">Za {{ $game->price }} dinara!</span>
                         <h2><a href="#">{{ $game->title }}</a></h2>
                     </header>
                     <a href="#" class="image fit">
@@ -31,7 +31,7 @@ GameForge
                     </a>
                     <p>{{ $game->description }}</p>
                     <ul class="actions special">
-                        <li><a href="#" class="button">Buy here!</a></li>
+                        <li><a href="{{ route('game.description', ['id' => $game->id]) }}" class="button">Opsirnije</a></li>
                     </ul>
                 </article>
             @endforeach
