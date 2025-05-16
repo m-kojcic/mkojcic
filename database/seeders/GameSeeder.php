@@ -17,35 +17,35 @@ class GameSeeder extends Seeder
             'title' => 'Final Fantasy VII',
             'description' => 'A classic RPG game set in a fantasy world.',
             'image' => 'ff7.jpg',
-            'price' => 29.99,
+            'price' => 2999.99,
             'genre_id' => 2,
         ]);
         Game::create([
             'title' => 'Doom Eternal',
             'description' => 'A fast-paced first-person shooter game.',
             'image' => 'doometernal.jpg',
-            'price' => 49.99,
+            'price' => 5999.99,
             'genre_id' => 3,
         ]);
         Game::create([
             'title' => 'The Legend of Zelda: Breath of the Wild',
             'description' => 'An open-world action-adventure game.',
             'image' => 'zelda.jpg',
-            'price' => 19.99,
+            'price' => 2999.99,
             'genre_id' => 4,
         ]);
         Game::create([
             'title' => 'Super Mario Odyssey',
             'description' => 'A platformer game featuring Mario in a 3D world.',
             'image' => 'mario.jpg',
-            'price' => 39.99,
+            'price' => 3999.99,
             'genre_id' => 5,
         ]);
         Game::create([
             'title' => 'Devil May Cry 5',
             'description' => 'An action-adventure hack and slash game.',
             'image' => 'dmc5.jpg',
-            'price' => 59.99,
+            'price' => 4999.99,
             'genre_id' => 1,
         ]);
     }

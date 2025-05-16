@@ -42,7 +42,7 @@ class UserSeeder extends Seeder
             'name' => 'Admin',
             'email' => 'admin@pwa.rs',
             'password' => Hash::make('admin'),
-            'role_id' => 2,
+            'role_id' => 1,
         ]);
     }
 }

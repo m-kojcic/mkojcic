@@ -13,7 +13,7 @@ GameForge
                 <h2><a href="#">{{ $featured->title }}</a></h2>
                 <p>{{ $featured->description }}</p>
             </header>
-            <a href="#" class="image main"><img src="{{ asset('assets/images/' . $featured->image) }}" alt="{{ $featured->title }}" /></a>
+            <a href="{{ route('game.description', ['id' => $featured->id]) }}" class="image main"><img src="{{ asset('assets/images/' . $featured->image) }}" alt="{{ $featured->title }}" /></a>
             <ul class="actions special">
                 <li><a href="{{ route('game.description', ['id' => $featured->id]) }}" class="button large">Opsirnije</a></li>
             </ul>
@@ -26,7 +26,7 @@ GameForge
                         <span class="date">Za {{ $game->price }} dinara!</span>
                         <h2><a href="#">{{ $game->title }}</a></h2>
                     </header>
-                    <a href="#" class="image fit">
+                    <a href="{{ route('game.description', ['id' => $game->id]) }}" class="image fit">
                         <img src="{{ asset('assets/images/' . $game->image) }}" alt="{{ $game->title }}" />
                     </a>
                     <p>{{ $game->description }}</p>

@@ -57,4 +57,10 @@ class ProfileController extends Controller
 
         return Redirect::to('/');
     }
+    
+    public function dashboard(Request $request)
+    {
+        $games = $request->user()->games;
+        return view('profile.dashboard', compact('games'));
+    }
 }
