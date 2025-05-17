@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Game;
@@ -21,6 +22,11 @@ Route::middleware('auth')->group(function () {
     Route::post('/game/{id}/order', [GameController::class, 'order'])->name('games.order');
     Route::delete('game/{id}/cancelOrder', [GameController::class, 'cancelOrder'])->name('games.cancelOrder');
     Route::post('game/{id}/comment', [GameController::class, 'storeComment'])->name('comments.store');
+});
+
+Route::middleware('IsAdmin')->group(function() {
+    Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('/admin/games', [AdminController::class, 'games'])->name('admin.games');
 });
 
 require __DIR__.'/auth.php';
