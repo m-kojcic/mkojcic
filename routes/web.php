@@ -33,6 +33,7 @@ Route::middleware('IsAdmin')->group(function() {
     Route::get('/admin/games/{game}/edit', [AdminController::class, 'editGame'])->name('admin.games.edit');
     Route::put('/admin/games/{game}', [AdminController::class, 'updateGame'])->name('admin.games.update');
     Route::delete('/admin/games/{game}', [AdminController::class, 'destroyGame'])->name('admin.games.destroy');
+    Route::get('/admin/comments', [CommentController::class, 'comments'])->name('admin.comments');
     Route::get('/admin/comments/{comment}/edit', [CommentController::class, 'editComment'])->name('admin.comments.edit');
     Route::put('/admin/comments/{comment}', [CommentController::class, 'updateComment'])->name('admin.comments.update');
     Route::delete('/admin/commnets/{comment}', [CommentController::class, 'destroyComment'])->name('admin.comments.destroy');

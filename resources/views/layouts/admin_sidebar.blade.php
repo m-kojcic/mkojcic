@@ -18,14 +18,14 @@
     <li class="nav-item">
       <a class="nav-link" href="{{ route('admin.games') }}">
         <i class="ti-game menu-icon"></i>
-        <span class="menu-title">Games</span>
+        <span class="menu-title">Igre</span>
       </a>
     </li>
     <!-- Example: Orders -->
     <li class="nav-item">
-      <a class="nav-link" href="#">
-        <i class="ti-shopping-cart menu-icon"></i>
-        <span class="menu-title">Orders</span>
+      <a class="nav-link" href="{{ route('admin.comments') }}">
+        <i class="ti-comments menu-icon"></i>
+        <span class="menu-title">Komentari</span>
       </a>
     </li>
     <!-- Add more admin links as needed -->

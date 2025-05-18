@@ -4,9 +4,19 @@
     Games table
 @endsection
 
+@section('scripts')
+
+<script>
+    $(document).ready(function() {
+        $('#gamesTable').DataTable();
+    });
+</script>
+
+@endsection
+
 @section('content')
     <a href="{{ route('admin.games.create') }}" class="btn btn-success mb-3">Dodaj igru</a>
-    <table id="games-table" class="table table-bordered table-striped">
+    <table id="gamesTable" class="table table-bordered table-striped">
         <thead>
             <tr>
                 <th>ID</th>
@@ -41,9 +51,4 @@
             @endforeach
         </tbody>
     </table>
-    <script>
-        $(document).ready(function() {
-            $('#games-table').DataTable();
-        });
-    </script>
 @endsection
