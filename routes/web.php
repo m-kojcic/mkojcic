@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use App\Models\Game;
 use Illuminate\Support\Facades\Route;
 
@@ -37,6 +38,15 @@ Route::middleware('IsAdmin')->group(function() {
     Route::get('/admin/comments/{comment}/edit', [CommentController::class, 'editComment'])->name('admin.comments.edit');
     Route::put('/admin/comments/{comment}', [CommentController::class, 'updateComment'])->name('admin.comments.update');
     Route::delete('/admin/commnets/{comment}', [CommentController::class, 'destroyComment'])->name('admin.comments.destroy');
+});
+
+Route::middleware('IsOnlyAdmin')->group(function() {
+    Route::get('/admin/users', [UserController::class, 'users'])->name('admin.users');
+    Route::get('/admin/users/create', [UserController::class, 'createUser'])->name('admin.users.create');
+    Route::post('/admin/users', [UserController::class, 'storeUser'])->name('admin.users.store');
+    Route::get('/admin/users/{user}/edit', [UserController::class, 'editUser'])->name('admin.users.edit');
+    Route::put('/admin/users/{user}', [UserController::class, 'updateUser'])->name('admin.users.update');
+    Route::delete('/admin/users/{user}', [UserController::class, 'destroyUser'])->name('admin.users.destroy');
 });
 
 require __DIR__.'/auth.php';

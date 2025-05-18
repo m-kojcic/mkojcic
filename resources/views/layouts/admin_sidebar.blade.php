@@ -9,7 +9,7 @@
     </li>
     <!-- Example: Manage Users -->
     <li class="nav-item">
-      <a class="nav-link" href="#">
+      <a class="nav-link" href="{{ route('admin.users') }}">
         <i class="ti-user menu-icon"></i>
         <span class="menu-title">Users</span>
       </a>
