@@ -6,6 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Game extends Model
 {
+    protected $fillable = [
+        'title',
+        'description',
+        'price',
+        'genre_id',
+        'image',
+    ];
+
     public function genre() {
         return $this->belongsTo(Genre::class);
     }
