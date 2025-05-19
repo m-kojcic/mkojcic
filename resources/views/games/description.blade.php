@@ -19,7 +19,7 @@
             @if($hasOrdered)
                 <form action="{{ route('comments.store', $game->id) }}" method="POST">
                     @csrf
-                    <textarea name="comment" rows="3" placeholder="Ostavite komentar..."></textarea>
+                    <textarea id="myeditorinstance" name="comment" rows="3" placeholder="Ostavite komentar..."></textarea>
                     <ul class="actions">
                         <li>
                             <button type="submit" class="button">Posalji komentar</button>
@@ -35,7 +35,7 @@
                 @foreach($game->comments as $comment)
                     <div>
                         <strong>{{ $comment->user->name }}</strong>
-                        <div>{{ $comment->content }}</div>
+                        <div>{{ strip_tags($comment->content) }}</div>
                     </div>
                 @endforeach
             </div>

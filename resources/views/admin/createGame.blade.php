@@ -14,7 +14,7 @@
         <div class="mb-3">
             <label for="description" class="form-label">Opis</label>
             <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
-        </div>
+        </div>  
         <div class="mb-3">
             <label for="price" class="form-label">Cena</label>
             <input type="number" class="form-control" id="price" name="price" required>

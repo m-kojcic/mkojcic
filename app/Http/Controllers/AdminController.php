@@ -29,11 +29,22 @@ class AdminController extends Controller
     public function createGame()
     {
         $genres = Genre::all();
-        return view('admin.editGame', compact('game', 'genres'));
+        return view('admin.createGame', compact('genres'));
     }
 
     public function storeGame(Request $request) {
-        Game::create($request->only(['title', 'description', 'price', 'genre_id', 'image']));
+        $data = $request->only(['title', 'description', 'price', 'genre_id']);
+
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('assets/images'), $filename);
+            $data['image'] = $filename;
+        } else {
+            $data['image'] = null;
+        }
+
+        Game::create($data);
         return redirect()->route('admin.games')->with('success', 'Igra uspesno dodata');
     }
 
