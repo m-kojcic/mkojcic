@@ -21,7 +21,7 @@
 
 				<!-- Intro -->
 					<div id="intro">
-						<h1>GameForge</h1>
+						<img src="{{ asset('assets/images/logo.png') }}" alt="logo">
 						<p>Tvoj stop shop centar za video igre</p>
 						<ul class="actions">
 							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
