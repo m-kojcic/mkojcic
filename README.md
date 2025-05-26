@@ -1,3 +1,12 @@
+## ⚠️ Requirements:
+  
+- [Composer](https://getcomposer.org/) must be installed  
+- [Node.js and npm](https://nodejs.org/) must be installed  
+- PHP must be added to your system PATH  
+   
+If you're using Windows, make sure to run `start.bat` from the **project folder** or it may not work correctly.
+
+
 #  Laravel Video Game Web Shop
 
 Created by **Matija Kojčić**

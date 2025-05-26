@@ -1,3 +1,10 @@
+## ⚠️ 前提条件:  
+- [Composer](https://getcomposer.org/) をインストールしてください  
+- [Node.js と npm](https://nodejs.org/) をインストールしてください  
+- PHP をシステムの PATH に追加してください  
+  
+Windows を使っている場合は、必ず `start.bat` を **プロジェクトフォルダ内** から実行してください。
+
 #  Laravel ゲームウェブショップ
 
 開発者： **Matija Kojčić**　（マティヤ・コイチッチ）
