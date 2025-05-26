@@ -17,7 +17,6 @@ Prikaz svih igara
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
                                     <th>Naziv</th>
                                     <th>Opis</th>
                                     <th>Cena</th>
@@ -29,7 +28,6 @@ Prikaz svih igara
                             <tbody>
                                 @foreach($games as $game)
                                     <tr>
-                                        <td>{{ $game->id }}</td>
                                         <td>{{ $game->title }}</td>
                                         <td>{{ $game->description }}</td>
                                         <td>{{ $game->price }}</td>

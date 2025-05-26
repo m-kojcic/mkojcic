@@ -8,11 +8,14 @@ use Illuminate\Http\Request;
 class GameController extends Controller
 {
     public function index() {
-        $featured = Game::orderBy('created_at', 'desc')->first(); // or use your own logic for "featured"
+        $featuredGames = Game::where('featured', true)->orderBy('created_at', 'desc')->take(5)->get();
+        $featured = $featuredGames->first();
+        $secondaryFeatured = $featuredGames->slice(1, 4);
         $games = Game::where('id', '!=', optional($featured)->id)->get();
 
         return view("games.home", [
             "featured" => $featured,
+            "secondaryFeatured" => $secondaryFeatured,
             "games" => $games,
         ]);
     }
@@ -31,7 +34,12 @@ class GameController extends Controller
 
     public function description($id) {
         $game = Game::findOrFail($id);
-        $hasOrdered = auth()->user()->games->contains($game->id);
+        $user = auth()->user();
+        $hasOrdered = false;
+
+        if ($user) {
+            $hasOrdered = $user->games->contains($game->id);
+        }
 
         return view("games.description", [
             "game" => $game,

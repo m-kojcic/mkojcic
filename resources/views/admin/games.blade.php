@@ -8,13 +8,20 @@
 
 <script>
     $(document).ready(function() {
-        $('#gamesTable').DataTable();
+        $('#gamesTable').DataTable({
+            responsive: true,
+        });
     });
 </script>
 
 @endsection
 
 @section('content')
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div> 
+    @endif
     <a href="{{ route('admin.games.create') }}" class="btn btn-success mb-3">Dodaj igru</a>
     <table id="gamesTable" class="table table-bordered table-striped">
         <thead>
@@ -25,6 +32,7 @@
                 <th>Cena</th>
                 <th>Zanr</th>
                 <th>Slika</th>
+                <th>Istaknuto</th>
                 <th>Opcije</th>
             </tr>
         </thead>
@@ -38,6 +46,13 @@
                     <td>{{ $game->genre->name ?? 'N/A' }}</td>
                     <td>
                         <img src="{{ asset('assets/images/' . $game->image) }}" alt="{{ $game->name }}">
+                    </td>
+                    <td>
+                        @if ($game->featured)
+                            <span class="badge bg-success">Istaknuto</span>
+                        @else
+                            <span class="badge bg-secondary">Nije istaknuto</span>
+                        @endif
                     </td>
                     <td>
                         <a href="{{ route('admin.games.edit', $game->id) }}" class="btn btn-primary">Izmeni</a>

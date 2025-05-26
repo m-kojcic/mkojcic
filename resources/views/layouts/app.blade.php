@@ -21,7 +21,7 @@
 
 				<!-- Intro -->
 					<div id="intro">
-						<img src="{{ asset('assets/images/logo.png') }}" alt="logo">
+						<img src="{{ asset('assets/images/logo.png') }}" class="logo" style="max-width: 75%;" alt="logo">
 						<p>Tvoj stop shop centar za video igre</p>
 						<ul class="actions">
 							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
@@ -30,7 +30,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<a href="index.html" class="logo">Gameforge</a>
+						<a href="{{ route('game.home') }}" class="logo">Gameforge</a>
 					</header>
 
 				<!-- Nav -->
@@ -44,27 +44,6 @@
 
 				<!-- Footer -->
 					<footer id="footer">
-						<section>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="3"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-						</section>
 						<section class="split contact">
 							<section class="alt">
 								<h3>Adresa</h3>

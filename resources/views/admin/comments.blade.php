@@ -8,13 +8,21 @@
 
 <script>
     $(document).ready(function() {
-        $('#commentsTable').DataTable();
+        $('#commentsTable').DataTable({
+            responsive: true,
+        });
     });
 </script>
 
 @endsection
 
 @section('content')
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div> 
+    @endif
+    <a href="{{ route('admin.comments.create') }}" class="btn btn-success mb-3">Dodaj komentar kao admin</a>
     <table id="commentsTable" class="table table-bordered table-striped">
         <thead>
             <tr>

@@ -8,13 +8,20 @@
 
 <script>
     $(document).ready(function() {
-        $('#usersTable').DataTable();
+        $('#usersTable').DataTable({
+            responsive: true,
+        });
     });
 </script>
 
 @endsection
 
 @section('content')
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div> 
+    @endif
     <a href="{{ route('admin.users.create') }}" class="btn btn-success mb-3">Dodaj korisnika</a>
     <table id="usersTable" class="table table-bordered table-striped">
         <thead>
@@ -32,7 +39,15 @@
                     <td>{{ $user->id }}</td>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
-                    <td>{{ $user->role_id }}</td>
+                    <td>
+                        @if ($user->role_id == 1)
+                            <span class="badge bg-danger">Admin</span>
+                        @elseif ($user->role_id == 3)
+                            <span class="badge bg-warning">Editor</span>
+                        @else
+                            <span class="badge bg-success">User</span>
+                        @endif
+                    </td>
                     <td>
                         <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-primary">Izmeni</a>
                             <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST" style="display:inline;">

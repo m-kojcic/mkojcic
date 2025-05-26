@@ -19,6 +19,7 @@ class GameSeeder extends Seeder
             'image' => 'ff7.jpg',
             'price' => 2999.99,
             'genre_id' => 2,
+            'featured' => true,
         ]);
         Game::create([
             'title' => 'Doom Eternal',
@@ -33,6 +34,7 @@ class GameSeeder extends Seeder
             'image' => 'zelda.jpg',
             'price' => 2999.99,
             'genre_id' => 4,
+            'featured' => true,
         ]);
         Game::create([
             'title' => 'Super Mario Odyssey',
@@ -47,6 +49,44 @@ class GameSeeder extends Seeder
             'image' => 'dmc5.jpg',
             'price' => 4999.99,
             'genre_id' => 1,
+            'featured' => true,
+        ]);
+        Game::create([
+            'title' => 'Silent Hill 2',
+            'description' => 'A psychological horror game with a gripping story.',
+            'image' => 'sh2.jpg',
+            'price' => 5999.99,
+            'genre_id' => 6,
+        ]);
+        Game::create([
+            'title' => 'Resident Evil 4',
+            'description' => 'A survival horror game with intense action.',
+            'image' => 're4.jpg',
+            'price' => 3999.99,
+            'genre_id' => 6,
+        ]);
+        Game::create([
+            'title' => 'Elden Ring',
+            'description' => 'An open-world action RPG with deep lore.',
+            'image' => 'er.jpg',
+            'price' => 4999.99,
+            'genre_id' => 2,
+            'featured' => true,
+        ]);
+        Game::create([
+            'title' => 'Nier Automata',
+            'description' => 'An action RPG with a compelling story and unique gameplay.',
+            'image' => 'nier.jpg',
+            'price' => 3999.99,
+            'genre_id' => 1,
+        ]);
+        Game::create([
+            'title' => 'The Witcher 3: Wild Hunt',
+            'description' => 'An open-world RPG with a rich narrative and expansive world.',
+            'image' => 'witcher3.jpg',
+            'price' => 5999.99,
+            'genre_id' => 2,
+            'featured' => true,
         ]);
     }
 }

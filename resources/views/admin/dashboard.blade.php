@@ -3,7 +3,7 @@
 @section('title')
     Admin Dashboard
 @section('content')
-    <h1>Welcome, Admin!</h1>
+    <h1>Admin Dashboard</h1>
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">

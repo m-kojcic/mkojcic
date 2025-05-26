@@ -11,6 +11,11 @@
         </li>
 
         @auth
+            @if(auth()->user()->role_id == 1 || auth()->user()->role_id == 3)
+                <li class="{{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
+                    <a href="{{ route('admin.dashboard') }}">Admin Dashboard</a>
+                </li>
+            @endif
             <li class="{{ request()->routeIs('dashboard') ? 'active' : '' }}">
                 <a href="{{ route('dashboard') }}">Dashboard</a>
             </li>

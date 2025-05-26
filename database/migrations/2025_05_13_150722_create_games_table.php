@@ -18,6 +18,7 @@ return new class extends Migration
             $table->decimal("price", 8, 2);
             $table->foreignId("genre_id")->constrained("genres");
             $table->string("image")->default("default.jpg");
+            $table->boolean("featured")->default(false);
             $table->timestamps();
         });
     }

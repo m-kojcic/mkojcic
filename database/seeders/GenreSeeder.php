@@ -28,5 +28,8 @@ class GenreSeeder extends Seeder
         Genre::create([
             'name' => 'Platformer',
         ]);
+        Genre::create([
+            'name' => 'Horror',
+        ]);
     }
 }
