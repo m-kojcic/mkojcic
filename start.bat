@@ -30,14 +30,4 @@ php artisan key:generate
 
 echo Running migrations and seeding...
 php artisan migrate:fresh --seed
-
-echo Installing npm dependencies and building assets...
-call npm install
-call npm run build
-
-echo Starting Laravel server at http://localhost:8000
-start cmd /k "php artisan serve"
-
-echo Laravel setup finished.
-
-pause
+php artisan serve
